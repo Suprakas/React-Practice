@@ -2,6 +2,7 @@ import "./App.css";
 import ProductCard from "./ProductCard";
 import NewCard from "./NewCard";
 import OldCard from "./OldCard";
+import ProductList from "./ProductList";
 import { useState, Fragment } from "react";
 
 const ProductItems = [
@@ -38,15 +39,13 @@ function App() {
   return (
     <div>
       <p>Total Price: ₹{totalPrice}</p>
+       <ProductList
+        items={product}
+        onDelete={handleDelete}
+        onPriceIncrease={handlePriceIncrease}
+      />
       {product.map((item) => (
         <Fragment key={item.id}>
-          <ProductCard
-            name={item.name}
-            price={item.price}
-            quality={item.quality}
-            onDelete={() => handleDelete(item.id)}
-            onPriceIncrease={() => handlePriceIncrease(item.id)}
-          />
           <NewCard
             name={item.name}
             price={item.price}
