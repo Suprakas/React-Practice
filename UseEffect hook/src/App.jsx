@@ -87,7 +87,6 @@
 
 // Stage 3 -> Cleanup function! ( trickiest concept in interviews)
 
-import './App.css'
 import { useState, useEffect } from "react";
 
 function App() {

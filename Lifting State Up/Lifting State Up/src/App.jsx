@@ -54,14 +54,13 @@ import Child2 from "./Child2";
 
 
 function App() {
-
   const [message, setMessage] = useState("")
 
-  function handleNameChange(value){
+  function handleNameChange(value) {
     setMessage(value);
   }
-  
-  return(
+
+  return (
     <div>
       <p>I am App</p>
       <Child1 onNameChange={handleNameChange} />

@@ -1,4 +1,3 @@
-import "./App.css";
 import ProductCard from "./ProductCard";
 import NewCard from "./NewCard";
 import OldCard from "./OldCard";
