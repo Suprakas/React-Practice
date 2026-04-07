@@ -21,7 +21,7 @@ export function cartReducer(state, action) {
                 i.id === action.payload ?
                     { ...i, qty: i.qty + 1 }
                     : i
-            )
+            ).filter(i => i.qty > 0) // Qty never goes below 1
 
         case "DECREASE_QTY":
             return state.map(i =>
