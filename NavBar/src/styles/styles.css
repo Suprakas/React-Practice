@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+}
+
+a {
+
+ margin: 0 10px;
+ color: white;
+ text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+}
