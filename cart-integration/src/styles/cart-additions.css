@@ -1,0 +1,20 @@
+/* ── Cart counter (Amazon-style) ─────────────────────────── */
+/* Append these to src/styles/itemcard.css                    */
+
+.item-cart__counter {
+  @apply flex items-center justify-between border-2 border-yellow-400 rounded-2xl px-4 py-2.5 bg-white gap-3;
+}
+
+.item-cart__icon-btn {
+  @apply bg-transparent border-none cursor-pointer flex items-center justify-center text-slate-800 text-lg leading-none;
+}
+
+.item-cart__count {
+  @apply text-sm font-semibold min-w-[20px] text-center text-slate-900;
+}
+
+/* ── Navbar cart badge ───────────────────────────────────── */
+
+.item-cart__navbar-badge {
+  @apply absolute -top-2 -right-2 bg-yellow-400 text-slate-900 text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none;
+}
