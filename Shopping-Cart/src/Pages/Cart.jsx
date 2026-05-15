@@ -8,47 +8,54 @@ const Cart = () => {
   } = useContext(CartContext);
 
   return (
-    <div className="container mt-4">
-      <h2 className="mb-4">Shopping Cart</h2>
+    <div className="p-5">
+      <h2 className="text-3xl font-bold mb-5">
+        Shopping Cart
+      </h2>
 
       {cart.length === 0 ? (
-        <h4>Your Cart Is Empty</h4>
+        <h4 className="text-xl font-medium">
+          Your Cart Is Empty
+        </h4>
       ) : (
-        cart.map((product) => (
-          <div className="card mb-3" key={product.id}>
-            <div className="row g-0 align-items-center">
-              <div className="col-md-2">
+        <div className="flex flex-col gap-4">
+          {cart.map((product) => (
+            <div
+              key={product.id}
+              className="border border-gray-300 rounded-lg p-4 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-5">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="img-fluid rounded-start"
+                  className="w-[120px] h-[120px] object-cover rounded-lg"
                 />
-              </div>
 
-              <div className="col-md-10">
-                <div className="card-body d-flex justify-content-between align-items-center">
-                  <div>
-                    <h5>{product.name}</h5>
+                <div className="flex flex-col gap-2">
+                  <h5 className="text-xl font-semibold">
+                    {product.name}
+                  </h5>
 
-                    <p>₹ {product.price}</p>
-                  </div>
-
-                  <button
-                    className="btn btn-danger"
-                    onClick={() =>
-                      dispatch({
-                        type: "REMOVE_FROM_CART",
-                        payload: product,
-                      })
-                    }
-                  >
-                    Remove
-                  </button>
+                  <p className="text-lg">
+                    ₹ {product.price}
+                  </p>
                 </div>
               </div>
+
+              <button
+                onClick={() =>
+                  dispatch({
+                    type: "REMOVE_FROM_CART",
+                    payload: product,
+                  })
+                }
+                className="bg-red-500 text-white  px-4 py-2 rounded-md hover:bg-red-600"
+              >
+                Remove
+              </button>
             </div>
-          </div>
-        ))
+          ))}
+        </div>
       )}
     </div>
   );
