@@ -1,13 +1,22 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const ProgressBar = ({ progress }) => {
+
+  const[animatedProgress, setAnimatedProgress] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => setAnimatedProgress(progress), 300)
+  }, [progress]);
+
   return (
     <div className="outer">
       <div
         className="inner"
         style={{
-          width: `${progress}%`,
-          color: `${progress}` < 5 ? "black" : "white",
+          //width: `${animatedProgress}%`,
+          transform: `translateX(${animatedProgress - 100}%)`,
+          color: animatedProgress < 5 ? "black" : "white",
         }}
         role="Progress-Bar"
         aria-valuenow={progress}
@@ -20,7 +29,7 @@ const ProgressBar = ({ progress }) => {
   );
 };
 function App() {
-  const bars = [0, 1, 5, 10, 15, 20, 25, 30, 45, 60, 70, 80, 90, 95];
+  const bars = [1, 5, 10, 15, 20, 25, 30, 45, 60, 70, 80, 90, 95];
   return (
     <div className="App">
       <h2>Progress bar</h2>

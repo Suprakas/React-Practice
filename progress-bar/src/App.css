@@ -11,5 +11,9 @@
 
 .inner {
   background-color: green;
+  color: white;
+  padding: 1px;
+  text-align: right;
+  transition: 0.5s ease-in;
 }
 
